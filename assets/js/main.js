@@ -1,5 +1,5 @@
 /*
-	Future Imperfect by HTML5 UP
+	Highlights by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
@@ -8,17 +8,14 @@
 
 	var	$window = $(window),
 		$body = $('body'),
-		$menu = $('#menu'),
-		$sidebar = $('#sidebar'),
-		$main = $('#main');
+		$html = $('html');
 
 	// Breakpoints.
 		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
+			large:   [ '981px',  '1680px' ],
+			medium:  [ '737px',  '980px'  ],
+			small:   [ '481px',  '736px'  ],
+			xsmall:  [ null,     '480px'  ]
 		});
 
 	// Play initial animations on page load.
@@ -28,68 +25,150 @@
 			}, 100);
 		});
 
-	// Menu.
-		$menu
-			.appendTo($body)
-			.panel({
-				delay: 500,
-				hideOnClick: true,
-				hideOnSwipe: true,
-				resetScroll: true,
-				resetForms: true,
-				side: 'right',
-				target: $body,
-				visibleClass: 'is-menu-visible'
-			});
+	// Touch mode.
+		if (browser.mobile) {
 
-	// Search (header).
-		var $search = $('#search'),
-			$search_input = $search.find('input');
+			var $wrapper;
 
-		$body
-			.on('click', '[href="#search"]', function(event) {
+			// Create wrapper.
+				$body.wrapInner('<div id="wrapper" />');
+				$wrapper = $('#wrapper');
 
-				event.preventDefault();
+				// Hack: iOS vh bug.
+					if (browser.os == 'ios')
+						$wrapper
+							.css('margin-top', -25)
+							.css('padding-bottom', 25);
 
-				// Not visible?
-					if (!$search.hasClass('visible')) {
+				// Pass scroll event to window.
+					$wrapper.on('scroll', function() {
+						$window.trigger('scroll');
+					});
 
-						// Reset form.
-							$search[0].reset();
+			// Scrolly.
+				$window.on('load.hl_scrolly', function() {
 
-						// Show.
-							$search.addClass('visible');
+					$('.scrolly').scrolly({
+						speed: 1500,
+						parent: $wrapper,
+						pollOnce: true
+					});
 
-						// Focus input.
-							$search_input.focus();
+					$window.off('load.hl_scrolly');
+
+				});
+
+			// Enable touch mode.
+				$html.addClass('is-touch');
+
+		}
+		else {
+
+			// Scrolly.
+				$('.scrolly').scrolly({
+					speed: 1500
+				});
+
+		}
+
+	// Header.
+		var $header = $('#header'),
+			$headerTitle = $header.find('header'),
+			$headerContainer = $header.find('.container');
+
+		// Make title fixed.
+			if (!browser.mobile) {
+
+				$window.on('load.hl_headerTitle', function() {
+
+					breakpoints.on('>medium', function() {
+
+						$headerTitle
+							.css('position', 'fixed')
+							.css('height', 'auto')
+							.css('top', '50%')
+							.css('left', '0')
+							.css('width', '100%')
+							.css('margin-top', ($headerTitle.outerHeight() / -2));
+
+					});
+
+					breakpoints.on('<=medium', function() {
+
+						$headerTitle
+							.css('position', '')
+							.css('height', '')
+							.css('top', '')
+							.css('left', '')
+							.css('width', '')
+							.css('margin-top', '');
+
+					});
+
+					$window.off('load.hl_headerTitle');
+
+				});
+
+			}
+
+		// Scrollex.
+			breakpoints.on('>small', function() {
+				$header.scrollex({
+					terminate: function() {
+
+						$headerTitle.css('opacity', '');
+
+					},
+					scroll: function(progress) {
+
+						// Fade out title as user scrolls down.
+							if (progress > 0.5)
+								x = 1 - progress;
+							else
+								x = progress;
+
+							$headerTitle.css('opacity', Math.max(0, Math.min(1, x * 2)));
 
 					}
+				});
+			});
+
+			breakpoints.on('<=small', function() {
+
+				$header.unscrollex();
 
 			});
 
-		$search_input
-			.on('keydown', function(event) {
+	// Main sections.
+		$('.main').each(function() {
 
-				if (event.keyCode == 27)
-					$search_input.blur();
+			var $this = $(this),
+				$primaryImg = $this.find('.image.primary > img'),
+				$bg,
+				options;
 
-			})
-			.on('blur', function() {
-				window.setTimeout(function() {
-					$search.removeClass('visible');
-				}, 100);
-			});
+			// No primary image? Bail.
+				if ($primaryImg.length == 0)
+					return;
 
-	// Intro.
-		var $intro = $('#intro');
+			// Create bg and append it to body.
+				$bg = $('<div class="main-bg" id="' + $this.attr('id') + '-bg"></div>')
+					.css('background-image', (
+						'url("assets/css/images/overlay.png"), url("' + $primaryImg.attr('src') + '")'
+					))
+					.appendTo($body);
 
-		// Move to main on <=large, back to sidebar on >large.
-			breakpoints.on('<=large', function() {
-				$intro.prependTo($main);
-			});
+			// Scrollex.
+				$this.scrollex({
+					mode: 'middle',
+					delay: 200,
+					top: '-10vh',
+					bottom: '-10vh',
+					init: function() { $bg.removeClass('active'); },
+					enter: function() { $bg.addClass('active'); },
+					leave: function() { $bg.removeClass('active'); }
+				});
 
-			breakpoints.on('>large', function() {
-				$intro.prependTo($sidebar);
-			});
+		});
 
 })(jQuery);
