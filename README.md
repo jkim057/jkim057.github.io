@@ -23,7 +23,7 @@
 
 ## 2.0 Short Term:
 1. Setup Favicon icon
-2. Setup Custom domain
+2. Setup Custom domain name
 3. Clean up and make more presentable.
 ## 2.0 Long Term:
 
