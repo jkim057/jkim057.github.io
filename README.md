@@ -17,8 +17,9 @@
 
 6. Hosting issue: figure out how to setup netlify and remove heroku
 
+7. Added resume to website, removing footer until I get everything settled.
 
-
+8. Footer needs correction, but need to leave credits.
 # Future plans:
 
 ## 2.0 Short Term:

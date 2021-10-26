@@ -2875,6 +2875,7 @@ input, select, textarea {
 			position: absolute;
 			text-align: center;
 			width: 100%;
+			
 		}
 
 			#footer footer h1, #footer footer h2, #footer footer h3, #footer footer h4, #footer footer h5, #footer footer h6, #footer footer strong, #footer footer b {
@@ -3128,10 +3129,12 @@ input, select, textarea {
 
 			#footer .container {
 				padding: 3em 1em 1em 1em ;
+				
 			}
 
 			#footer footer .copyright {
 				line-height: inherit;
+				
 			}
 
 				#footer footer .copyright li {
@@ -3139,6 +3142,7 @@ input, select, textarea {
 					display: block;
 					margin: 0;
 					padding: 0;
+					
 				}
 
 	}
