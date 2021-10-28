@@ -18,14 +18,17 @@
 6. Hosting issue: figure out how to setup netlify and remove heroku
 
 7. Added resume to website, removing footer until I get everything settled.
+* Footer needs correction, but need to leave credits.
 
-8. Footer needs correction, but need to leave credits.
+8. Favicon works apparently, not sure how. Last time I checked, it didn't.
 # Future plans:
 
 ## 2.0 Short Term:
-1. Setup Favicon icon
+1. ~~Setup Favicon icon~~
+* It just works now apparently.
 2. Setup Custom domain name
 3. Clean up and make more presentable.
+* fix footer 
 ## 2.0 Long Term:
 
 ### 1.0 Short term (OLD):
