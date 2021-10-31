@@ -28,7 +28,9 @@
 * It just works now apparently.
 2. Setup Custom domain name
 3. Clean up and make more presentable.
-* fix footer 
+* fix footer template changes
+* I tried messing around with the CSS to fix the color of the footer, but now I'm wondering what I'm missing.
+
 ## 2.0 Long Term:
 
 ### 1.0 Short term (OLD):
