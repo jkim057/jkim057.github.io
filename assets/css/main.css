@@ -2860,12 +2860,14 @@ input, select, textarea {
 		padding: 0 0 12em 0;
 		position: relative;
 		text-align: center;
+		/* list-style-type: none; */
 	}
 
 		#footer .container {
 			padding: 5em 2.5em 3em 2.5em ;
 			background: rgba(255, 255, 255, 0.95);
 			box-shadow: inset 0 1px 0 0 #dddddd;
+			/* list-style-type: none; */
 		}
 
 		#footer footer {
@@ -2875,25 +2877,30 @@ input, select, textarea {
 			position: absolute;
 			text-align: center;
 			width: 100%;
+			/* list-style-type: none; */
 			
 		}
 
 			#footer footer h1, #footer footer h2, #footer footer h3, #footer footer h4, #footer footer h5, #footer footer h6, #footer footer strong, #footer footer b {
 				color: #ffffff;
+				/* list-style-type: none; */
 			}
 
 			#footer footer a {
 				color: inherit;
+				/* list-style-type: none; */
 			}
 
 				#footer footer a:hover {
 					color: #ffffff !important;
+					/* list-style-type: none; */
 				}
 
 			#footer footer .copyright {
 				font-size: 0.8em;
 				line-height: 1em;
 				padding: 0;
+				/* list-style-type: none; */
 			}
 
 				#footer footer .copyright li {
@@ -2901,12 +2908,18 @@ input, select, textarea {
 					display: inline-block;
 					margin: 0 0 0 1em;
 					padding: 0 0 0 1em;
+					/* list-style-type: none; */
 				}
 
 					#footer footer .copyright li:first-child {
+						/* list-style-type: none; */
 						border-left: 0;
 						margin-left: 0;
 						padding-left: 0;
+					}
+					.bottomDots {
+						list-style-type: none;
+						color:white;
 					}
 
 /* Large */
@@ -3129,15 +3142,17 @@ input, select, textarea {
 
 			#footer .container {
 				padding: 3em 1em 1em 1em ;
+				list-style-type: none;
 				
 			}
 
 			#footer footer .copyright {
 				line-height: inherit;
-				
+				list-style-type: none;
 			}
 
 				#footer footer .copyright li {
+					list-style-type: none;
 					border-left: 0;
 					display: block;
 					margin: 0;

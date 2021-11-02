@@ -29,9 +29,16 @@
 2. Setup Custom domain name
 3. Clean up and make more presentable.
 * fix footer template changes
-* I tried messing around with the CSS to fix the color of the footer, but now I'm wondering what I'm missing.
-4. Change background image to something else? maybe something  teal blue 
+* ~~I tried messing around with the CSS to fix the color of the footer, but now I'm wondering what I'm missing.~~
+* ~~Still can not figure out why I can't change footer display~~
+* Footer items did not exist in the classes I was editing, adding an class pushed the changes through.
+4. Change background image to something else? maybe something teal blue 
 ## 2.0 Long Term:
+
+
+
+
+
 
 ### 1.0 Short term (OLD):
 1. ~~Plan is to change about page to homepage.~~
