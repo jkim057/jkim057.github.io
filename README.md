@@ -8,6 +8,17 @@
 * Attempted to use netlify, after all the issues, will probably skip for time being, will use other host site.
 
 2. Need to setup custom domain name.
+
+3. Hosting issue: figure out how to setup netlify and remove heroku
+
+4. Added resume to website, removing footer until I get everything settled.
+* Footer needs correction, but need to leave credits.
+
+5. Favicon works apparently, not sure how. Last time I checked, it didn't.
+
+6. Still don't understand DNS and SSL certificates for changing custom domains
+
+
 ### 1.0 Notes:
 1. Took way too long to remember how Route and Link worked. Wish I figured it out sooner, it's so much more easy to figure out then the display:none and passing of the state nonsense I was overcomplicated things with.
 2. Updated links to open new tabs instead of opening the links on same tab.
@@ -15,12 +26,7 @@
 4. ~~Trying to figure out if I can just import files or if I should just start with the template from the getgo~~
 5. Decided to use template for website display, should make things easier to read.
 
-6. Hosting issue: figure out how to setup netlify and remove heroku
 
-7. Added resume to website, removing footer until I get everything settled.
-* Footer needs correction, but need to leave credits.
-
-8. Favicon works apparently, not sure how. Last time I checked, it didn't.
 # Future plans:
 
 ## 2.0 Short Term:
