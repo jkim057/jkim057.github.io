@@ -1,5 +1,6 @@
 # Portfolio 2.0
-
+Current website :
+https://jkim057.github.io/
 
 # Notes and considerations:
 ## 2.0 Notes:
