@@ -17,7 +17,9 @@ https://jkim057.github.io/
 
 5. Favicon works apparently, not sure how. Last time I checked, it didn't.
 
-6. Still don't understand DNS and SSL certificates for changing custom domains
+6. Updated resume to include new portfolio.
+
+7. Still don't understand DNS and SSL certificates for changing custom domains
 
 
 ### 1.0 Notes:
